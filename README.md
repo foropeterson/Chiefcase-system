@@ -1,4 +1,4 @@
-# Django Project Name
+![image](https://github.com/foropeterson/Chiefcase-system/assets/129737573/12865322-2189-4878-82f6-3e48b79c090c)# Django Project Name
 ![image](https://github.com/foropeterson/Chiefcase-system/assets/129737573/777c1782-89c7-4ca2-af3a-abae8f7231bc)
 
 
@@ -8,17 +8,10 @@
 
 [Project Name] is a Django-based web application designed to [brief description of what your project does]. It provides features such as [list some key features or functionalities].
 
-## Table of Contents
+## scree
 
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Running Tests](#running-tests)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+![image](https://github.com/foropeterson/Chiefcase-system/assets/129737573/4a20f314-94bb-4500-a0ce-fc3340107ee7)
+
 
 ## Features
 
