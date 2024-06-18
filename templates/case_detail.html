@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom styles -->
+    <style>
+        /* Custom sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            background-color: #343a40; /* Dark background color */
+        }
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable */
+        }
+        .sidebar a {
+            color: #fff; /* White text color */
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057; /* Darker background color on hover */
+        }
+        .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+}
+        /* Content */
+        .content {
+            margin-left: 250px; /* Adjust for sidebar width */
+            padding: 20px;
+        }
+        .case-card {
+            background-color: #f8f9fa; /* Light gray background color */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .case-card h4 {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'biodatalist' %}">Bio Data Management</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cases' %}">Case Management</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'appointments' %}">Appointment Management</a>
+            </li>
+        </ul>
+        <a href="{% url 'logoutview' %}">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+    </div>
+
+    <!-- Case Details content -->
+    <div class="content">
+        <h2>Case Details</h2>
+        <a href="{% url 'cases' %}" class="btn btn-primary mb-3">
+            <i class="fas fa-arrow-left"></i> Back to Cases
+        </a>
+        <div class="case-card">
+            <h4>Case Number: {{ case.id }}</h4>
+            <p><strong>Case Name:</strong> {{ case.title }}</p>
+            <p><strong>Category:</strong> {{ case.casecategory }}</p>
+            <p><strong>Description:</strong> {{ case.description }}</p>
+            <p><strong>Date Created:</strong> {{ case.date_created|date:"Y-m-d" }}</p>
+            <p><strong>Owner:</strong> {{ case.complainant.first_name }} {{ case.complainant.last_name }}</p>
+            <p><strong>Status:</strong> <span class="{% if case.status == 'approved' %}text-success{% elif case.status == 'rejected' %}text-danger{% elif case.status == 'solved' %}text-primary{% elif case.status == 'pending' %}text-warning{% endif %}">{{ case.status }}</span></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
