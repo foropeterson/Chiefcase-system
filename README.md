@@ -1,6 +1,7 @@
 # Django Project Name
+![image](https://github.com/foropeterson/Chiefcase-system/assets/129737573/777c1782-89c7-4ca2-af3a-abae8f7231bc)
 
-![Project Logo]![Uploading image.png…]()
+
 
 
 ## Description
