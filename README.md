@@ -1,6 +1,7 @@
 # Django Project Name
 
-![Project Logo](https://via.placeholder.com/150)
+![Project Logo]![Uploading image.png…]()
+
 
 ## Description
 
